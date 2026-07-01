@@ -1,27 +1,17 @@
-name: CI Build and Test
+name: Hello World
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  build-and-test:
+  hello-world:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Docker Compose services
-        run: docker compose build
-
-      - name: Start Docker Compose services
-        run: docker compose up -d
-
-      - name: Show running containers
-        run: docker ps
-
-      - name: Stop services
-        run: docker compose down
+      - name: Print Hello World
+        run: echo "Hello World"
